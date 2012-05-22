@@ -6,7 +6,7 @@ def read(fname):
     return codecs.open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name='django-textext',
+    name='django-autocomplete',
     version='0.1',
     description="...",
     long_description = read('README.md'),

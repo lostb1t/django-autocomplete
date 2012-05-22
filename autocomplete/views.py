@@ -5,7 +5,7 @@ from django.utils.simplejson import dumps
 from taggit.models import Tag
 
 
-RESULTS = getattr(settings, 'TAGGITEXT_RESULTS_LIMIT', 20)
+RESULTS = getattr(settings, 'AUTOCOMPLETE_RESULTS_LIMIT', 20)
 
 
 # TODO: Cache the results

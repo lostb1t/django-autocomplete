@@ -9,7 +9,7 @@ DEFAULT_JS_FILENAME = 'jquery-textext-1.3.0.js'
 DEFAULT_BASE_URL = '/'.join([settings.STATIC_URL, 'js'])
 DEFAULT_JS_PATH = '/'.join([DEFAULT_BASE_URL, DEFAULT_JS_FILENAME])
 
-JS_PATH = getattr(settings, 'TAGGITEXT_JS_PATH', DEFAULT_JS_PATH)
+JS_PATH = getattr(settings, 'AUTOCOMPLETE_JS_PATH', DEFAULT_JS_PATH)
 
 
 class TagAutocomplete(forms.Textarea):

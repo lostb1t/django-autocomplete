@@ -20,7 +20,7 @@ class TagAutocomplete(forms.Textarea):
         super(TagAutocomplete, self).__init__(*args, **kwargs)
 
     def render(self, name, value, attrs=None):
-        list_view = reverse('taggitext-search')
+        list_view = reverse('autocomplete-search')
         if value is not None and not isinstance(value, basestring):
             value = dumps([o.tag.name for o in value.select_related("tag")])
         html = super(TagAutocomplete, self).render(name, '', attrs)

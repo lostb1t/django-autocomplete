@@ -7,7 +7,7 @@ def read(fname):
 
 setup(
     name='django-autocomplete',
-    version='0.2',
+    version='0.3',
     description="...",
     long_description = read('README.md'),
     author='Sjoerd Arendsen',

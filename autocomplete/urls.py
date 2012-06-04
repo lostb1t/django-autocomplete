@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import *
 
 urlpatterns = patterns('autocomplete.views',
-    url(r'^search/$', 'search_tags', name='autocomplete-search'),
+    url(r'^tags/$', 'autocomplete_tags', name='autocomplete-tags'),
+    url(r'^m2m/$', 'autocomplete_m2m', name='autocomplete-m2m'),
 )

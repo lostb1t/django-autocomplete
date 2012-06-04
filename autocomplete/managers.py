@@ -4,17 +4,15 @@ from django.utils.simplejson import loads
 from taggit.forms import TagField
 from taggit.managers import TaggableManager as BaseTaggableManager
 
-from widgets import TagAutocomplete
-
+from widgets import AutocompleteTags
 
 class AutocompleteTagField(TagField):
-    widget = TagAutocomplete
+    widget = AutocompleteTags
 
     def clean(self, value):
         words = loads(value)
         words.sort()
         return words
-
 
 class TaggableManager(BaseTaggableManager):
     def formfield(self, form_class=AutocompleteTagField, **kwargs):
@@ -23,5 +21,8 @@ class TaggableManager(BaseTaggableManager):
             "help_text": "",
         }
         defaults.update(kwargs)
-        kwargs['widget'] = TagAutocomplete
+        kwargs['widget'] = AutocompleteTags
         return form_class(**kwargs)
+
+from south.modelsinspector import add_ignored_fields
+add_ignored_fields(["^autocomplete\.managers"])
